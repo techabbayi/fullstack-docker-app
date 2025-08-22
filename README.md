@@ -30,3 +30,25 @@ fullstack-docker-app/
 ├── .env                    # (Empty, for future environment variables)
 └── README.md               # Project documentation
 ```
+
+
+# Mini Project 3 - Docker Persistence & Debugging
+
+## Features
+- Fullstack app (React + Node.js + Postgres) running in Docker.
+- Database persistence using Docker volumes.
+- Debugging with `docker logs` and `docker exec`.
+- Verified stability after stop/start.
+
+## Steps Performed
+1. Added volumes to Postgres service in `docker-compose.yml`.
+2. Verified persistence using:
+   - `docker-compose down` → `docker-compose up`
+   - Logs showed: *Skipping initialization*
+3. Debugged using:
+   - `docker logs backend-1`
+   - `docker exec -it db-1 bash`
+4. Tested stop/start:
+   - `docker-compose stop`
+   - `docker-compose start`
+   - App still works in browser 
